@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>উদ্ভিদের চলন – Tab Layout PDF</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      background-color: #f3f4f6;
+      color: #111827;
+      margin: 0;
+    }
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #1e3a8a;
+    }
+    .tabs button {
+      flex: 1 1 150px;
+      padding: 14px 20px;
+      border: none;
+      background: #3b82f6;
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .tabs button:hover,
+    .tabs button.active {
+      background: #1e40af;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background: white;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 10px;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background: #e2e8f0;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .footer-nav a {
+      background: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .footer-nav a:hover {
+      background: #1e40af;
+    }
+    @media (max-width: 600px) {
+      .tabs {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    🌿 উদ্ভিদের চলন – ক্লাস ভিত্তিক PDF (Tab Layout)
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab('class1')">Class 1</button>
+    <button class="tab-btn" onclick="openTab('class2')">Class 2</button>
+    <button class="tab-btn" onclick="openTab('class3')">Class 3</button>
+    <button class="tab-btn" onclick="openTab('pyq')">PYQ</button>
+  </div>
+
+  <div id="class1" class="tab-content active">
+    <h2>📘 Class 1</h2>
+    <iframe src="https://drive.google.com/file/d/11LSRiJk36u20hxM05roWlN55UawIDzu7/preview" allow="autoplay"></iframe>
+  </div>
+
+  <div id="class2" class="tab-content">
+    <h2>📘 Class 2</h2>
+    <iframe src="https://drive.google.com/file/d/11_bbHg7mzaXJbAB6EMyTN_tCQjoh6DCD/preview" allow="autoplay"></iframe>
+  </div>
+
+  <div id="class3" class="tab-content">
+    <h2>📘 Class 3</h2>
+    <iframe src="https://drive.google.com/file/d/11SAj0epVqKf6JqmkijP1hpDVx1icvkbQ/preview" allow="autoplay"></iframe>
+  </div>
+
+  <div id="pyq" class="tab-content">
+    <h2>📘 PYQ</h2>
+    <iframe src="https://drive.google.com/file/d/11QUfw2yK-5NxeL_GsklN9JegL_v01C_o/preview" allow="autoplay"></iframe>
+  </div>
+
+  <!-- 🔻 Footer Navigation Buttons -->
+  <div class="footer-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="group1.html">Group 1</a>
+    <a href="group2.html">Group 2</a>
+    <a href="group3.html">Group 3</a>
+    <a href="group4.html">Group 4</a>
+    <a href="#top">🔼 Top</a>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
